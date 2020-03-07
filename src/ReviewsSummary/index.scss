@@ -1,0 +1,34 @@
+@import '../variables.scss';
+
+.review-summary {
+    .review-count {
+        margin: 0.5rem 0;
+    }
+
+    .review-filter {
+        height: 2rem;
+    
+        .review-filter-link {
+            color: $marigold;
+            text-decoration: underline;
+            margin-right: 0.5rem;
+            
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+    
+    .percentage-bar {
+        height: 1.5rem;
+        border: 1px solid gray;
+        border-radius: 2px;
+        position: relative;
+        width: 150px;
+    }
+    
+    .percentage-bar-filler {
+        background: $marigold;
+        height: 100%;
+    }
+}
