@@ -1,50 +1,18 @@
 {
-  "name": "roadie",
-  "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001",
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-regular-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/react-fontawesome": "^0.1.9",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "node-sass": "^4.13.1",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
-    "react-modal": "^3.11.2",
-    "react-rating": "^2.0.4",
-    "react-scripts": "3.4.0"
-  },
-  "scripts": {
-    "server": "node src/server.js",
-    "client": "npm run start",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "concurrently": "^5.1.0"
+    "name": "roadie-express",
+    "version": "0.1.0",
+    "private": true,
+    "main": "server.js",
+    "scripts": {
+      "start": "node server.js",
+      "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+    },
+    "dependencies": {
+      "body-parser": "^1.18.3",
+      "express": "^4.16.4"
+    },
+    "devDependencies": {
+      "nodemon": "^1.18.10",
+      "npm-run-all": "^4.1.5"
+    }
   }
-}
