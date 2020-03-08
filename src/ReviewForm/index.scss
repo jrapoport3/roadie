@@ -1,0 +1,37 @@
+@import '../variables.scss';
+
+.review-form-error {
+    color: red;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.review-header {
+    text-align: center;
+    margin-top: 0;
+}
+
+.review-form-field {
+    margin-bottom: 1rem;
+    margin-top: 0.25rem;
+    padding: 2px;
+    width: 100%;
+    outline: none;
+    border-radius: 2px;
+    border: 1px solid $gray-light;
+
+    &.form-field-large {
+        height: 70px;
+    }
+}
+
+.review-form-rating {
+    margin-bottom: 1rem;
+    width: 150px;
+    outline: none;
+}
+
+.review-form-buttons {
+    display: flex;
+    justify-content: flex-end;
+}

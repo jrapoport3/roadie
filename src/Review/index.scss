@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 .review {
-    border: 1px solid gray;
+    border: 1px solid $gray-light;
     border-radius: 2px;
     padding: 0.75rem;
     display: grid;

@@ -31,36 +31,28 @@
   .product-overview-buttons {
     display: flex;
     justify-content: flex-end;
-
-    .button {
-      height: 2rem;
-      width: 120px;
-      text-transform: uppercase;
-      border: $teal solid 1px;
-      border-radius: 3px;
-    }
-
-    .button + .button {
-      margin-left: 1rem;
-    }
-
-    .button-primary {
-      background: $teal;
-      color: white;
-    }
-
-    .button-secondary {
-      color: $teal;
-    }
   }
+}
 
-  .review-modal {
+.review-modal {
     position: fixed;
     left: 50%;
     top: 50%;
     background: white;
-    border: 1px solid black;
+    border: 1px solid $gray-light;
     border-radius: 2px;
-    width: 500px;
-  }
+    width: 400px;
+    transform: translate(-50%,-50%);
+    padding: 1rem;
+    outline: none;
+    opacity: 1;
+}
+
+.review-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(39, 39, 39, 0.7);
 }
