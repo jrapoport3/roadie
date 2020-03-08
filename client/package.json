@@ -19,7 +19,7 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
-    "server": "node server.js",
+    "server": "node ../server.js",
     "client": "npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "react-scripts start",
