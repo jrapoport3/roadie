@@ -1,5 +1,5 @@
 {
-  "name": "roadie-client",
+  "name": "roadie",
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
@@ -11,8 +11,6 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
     "@testing-library/user-event": "^7.2.1",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
@@ -21,7 +19,9 @@
     "react-scripts": "3.4.0"
   },
   "scripts": {
+    "server": "node server.js",
     "client": "npm run start",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
