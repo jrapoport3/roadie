@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 const RatingContext = createContext({
   rating: 0,
@@ -6,20 +6,19 @@ const RatingContext = createContext({
 });
 
 const RatingProvider = ({ children }) => {
-  
-  const updateRating = (rating) => {
-    setRatingState((prevState) => {
+  const updateRating = rating => {
+    setRatingState(prevState => {
       return {
         ...prevState,
         rating
-      }
+      };
     });
-  }
+  };
 
   const initialState = {
     rating: 0,
     updateRating
-  }
+  };
 
   const [ratingState, setRatingState] = useState(initialState);
 
@@ -27,7 +26,7 @@ const RatingProvider = ({ children }) => {
     <RatingContext.Provider value={ratingState}>
       {children}
     </RatingContext.Provider>
-  )
-}
+  );
+};
 
-export { RatingContext, RatingProvider};
+export { RatingContext, RatingProvider };

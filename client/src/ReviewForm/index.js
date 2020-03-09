@@ -1,38 +1,45 @@
-import React, {useState, useContext} from "react";
+import React, { useState, useContext } from "react";
 import { ReviewContext } from "../review.context";
 
 import "./index.scss";
 
 const ReviewForm = ({ closeAction, handleSubmit }) => {
-  const { reviews, updateReviews } = useContext(ReviewContext)
+  const { reviews, updateReviews } = useContext(ReviewContext);
 
   const [rating, setRatng] = useState(1);
-  const [user, setUser] = useState('');
-  const [title, setTitle] = useState('');
-  const [review, setReview] = useState('');
+  const [user, setUser] = useState("");
+  const [title, setTitle] = useState("");
+  const [review, setReview] = useState("");
   const [error, setError] = useState(null);
 
   const validateForm = () => {
-    let errorMsg = '';
-    if (!user) errorMsg = 'Name is required.';
-    if (!title) errorMsg = 'Title is required.';
-    if (!review) errorMsg = 'Review is required.';
+    let errorMsg = "";
+    if (!user) errorMsg = "Name is required.";
+    if (!title) errorMsg = "Title is required.";
+    if (!review) errorMsg = "Review is required.";
     return errorMsg;
-  }
+  };
 
-  const onSubmit = (event) => {
+  const onSubmit = event => {
     event.preventDefault();
     const errorMsg = validateForm();
     if (!errorMsg) {
       const today = new Date();
-      const date = `${today.getMonth() + 1}/${today.getDate()}/${today.getFullYear().toString().substring(2)}`;
+      const date = `${today.getMonth() + 1}/${today.getDate()}/${today
+        .getFullYear()
+        .toString()
+        .substring(2)}`;
       const id = Math.floor(Math.random() * 100);
-      updateReviews([{rating: parseInt(rating), user, title, review, date, id }].concat(reviews));
+      updateReviews(
+        [{ rating: parseInt(rating), user, title, review, date, id }].concat(
+          reviews
+        )
+      );
       handleSubmit();
     } else {
       setError(errorMsg);
     }
-  }
+  };
 
   return (
     <>
@@ -40,7 +47,10 @@ const ReviewForm = ({ closeAction, handleSubmit }) => {
       <form onSubmit={onSubmit}>
         {error && <div className="review-form-error">{error}</div>}
         <div>Rating</div>
-        <select className="review-form-rating" onChange={e => setRatng(e.target.value)}>
+        <select
+          className="review-form-rating"
+          onChange={e => setRatng(e.target.value)}
+        >
           <option value="1">One star</option>
           <option value="2">Two star</option>
           <option value="3">Three star</option>

@@ -1,5 +1,4 @@
-
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from "react";
 
 const ReviewContext = createContext({
   reviews: [],
@@ -7,20 +6,19 @@ const ReviewContext = createContext({
 });
 
 const ReviewProvider = ({ children }) => {
-  
-  const updateReviews = (reviews) => {
-    setReviewState((prevState) => {
+  const updateReviews = reviews => {
+    setReviewState(prevState => {
       return {
         ...prevState,
         reviews
-      }
+      };
     });
-  }
+  };
 
   const initialState = {
     reviews: [],
     updateReviews
-  }
+  };
 
   const [reviewState, setReviewState] = useState(initialState);
 
@@ -28,7 +26,7 @@ const ReviewProvider = ({ children }) => {
     <ReviewContext.Provider value={reviewState}>
       {children}
     </ReviewContext.Provider>
-  )
-}
+  );
+};
 
-export { ReviewContext, ReviewProvider};
+export { ReviewContext, ReviewProvider };

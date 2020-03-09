@@ -1,11 +1,11 @@
 const express = require("express");
-const path = require('path');
+const path = require("path");
 const bodyParser = require("body-parser");
 
 const app = express();
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, "client/build")));
 
 const port = process.env.PORT || 3001;
 
@@ -17,7 +17,13 @@ const initialData = {
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod " +
     "tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud " +
     "exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-  details: [{id: 1, content: 'reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla'}],
+  details: [
+    {
+      id: 1,
+      content:
+        "reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla"
+    }
+  ],
   reviews: [
     {
       id: 1,

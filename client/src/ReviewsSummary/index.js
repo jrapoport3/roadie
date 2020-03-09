@@ -10,11 +10,16 @@ const ReviewsSummary = () => {
   const { reviews } = useContext(ReviewContext);
 
   const reviewCount = reviews.length;
-  const sum = reviews ? reviews.reduce((sum, review) => sum + review.rating, 0) : 0;
+  const sum = reviews
+    ? reviews.reduce((sum, review) => sum + review.rating, 0)
+    : 0;
   const reviewAvg = (sum / reviewCount).toFixed(1);
 
   const buildFilter = rating => {
-    let percent = ((reviews.filter(review => review.rating === rating).length) / reviewCount) * 100;
+    let percent =
+      (reviews.filter(review => review.rating === rating).length /
+        reviewCount) *
+      100;
 
     let divStyle = {
       width: percent + "%"
